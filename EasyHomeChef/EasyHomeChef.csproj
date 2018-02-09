@@ -249,6 +249,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\Source_Sans_Pro\OFL.txt" />
     <Content Include="Content\images\bottom.jpg" />
+    <Content Include="Content\images\Frog.jpg" />
     <Content Include="Content\images\icons.svg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\menu.png" />
