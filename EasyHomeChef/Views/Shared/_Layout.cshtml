@@ -30,31 +30,19 @@
     <script src="~/Content/js/modernizr.custom.js"></script>
     <script src="~/Content/js/bigSlide.js"></script>
     <script>
-        $(document).ready(function () {
-            $('.menu-link').bigSlide();
-        });
+        
     </script>
     <script type="text/javascript" src="~/Content/js/move-top.js"></script>
     <script type="text/javascript" src="~/Content/js/easing.js"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function ($) {
-            $(".scroll").click(function (event) {
-                event.preventDefault();
-                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
-            });
-        });
-    </script>
-
+    <script type="text/javascript" src="~/Content/scripts/DetalhesPagina.js"></script>
     <!--script-->
+
     <!-- swipe box js -->
     <link rel="stylesheet" href="~/Content/css/swipebox.css">
     <script src="~/Content/js/jquery.swipebox.min.js"></script>
-    <script type="text/javascript">
-        jQuery(function ($) {
-            $(".swipebox").swipebox();
-        });
-    </script>
+    <script src="~/Content/scripts/MenuLateral.js"></script>
     <!-- //swipe box js -->
+    
     <!--script-->
     <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
@@ -65,7 +53,7 @@
             <div id="menu" class="panel" role="navigation">
                 <div class="wrap-content">
                     <div class="profile-menu text-center">
-                        <img class="img-circle border-effect" src="~/Content/images/pic3.png" alt=" ">
+                        <img class="img-circle border-effect" src="~/Content/images/GangsterKermitNew.png" alt=" ">
                         <h3>Usuário</h3>
                         <p>Aqui vai ficar o nivel de cozinheiro</p>
                         <div class="pro-menu">
@@ -95,31 +83,6 @@
                                 <li><a href="#">Registro de atividades</a></li>
                                 <li><a href="#">sair</a></li>
                             </ul>
-                            <script type="text/javascript">
-                                function DropDown(el) {
-                                    this.dd = el;
-                                    this.initEvents();
-                                }
-                                DropDown.prototype = {
-                                    initEvents: function () {
-                                        var obj = this;
-
-                                        obj.dd.on('click', function (event) {
-                                            $(this).toggleClass('active');
-                                            event.stopPropagation();
-                                        });
-                                    }
-                                }
-                                $(function () {
-
-                                    var dd = new DropDown($('#dd1'));
-
-                                    $(document).click(function () {
-                                        // all dropdowns
-                                        $('.wrapper-dropdown-1').removeClass('active');
-                                    });
-                                });
-                            </script>
                         </div>
                     </div>
                     <div class="clearfix"></div>
@@ -130,8 +93,6 @@
                             <img src="~/Content/images/logo.png" alt=" " />
                             <h3>Easy Home Chef</h3>
                             <h4>Rec</h4>
-
-
                         </div>
                         <div class="banner_search">
                             <form>
@@ -139,8 +100,6 @@
                                 <input type="submit" value=" ">
                             </form>
                         </div>
-
-
                     </div>
                 </div>
                 <div class="banner-bottom">
@@ -195,7 +154,6 @@
                         </div>
                         <div class="clearfix"></div>
                     </div>
-
                 </div>
             </div>
         </div>

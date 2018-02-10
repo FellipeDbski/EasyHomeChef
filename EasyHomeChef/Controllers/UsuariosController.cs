@@ -12,5 +12,11 @@ namespace EasyHomeChef.Controllers
     public class UsuariosController : Controller
     {
 
+        public ActionResult Cadastro(Usuario usuario, Geladeira geladeira)
+        {
+           
+            return RedirectToAction("Index");
+        }
+
     }
 }

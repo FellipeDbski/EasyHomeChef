@@ -207,6 +207,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DAO\EasyHomeChefContext.cs" />
+    <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -249,7 +250,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\Source_Sans_Pro\OFL.txt" />
     <Content Include="Content\images\bottom.jpg" />
-    <Content Include="Content\images\Frog.jpg" />
+    <Content Include="Content\images\GangsterKermitNew.png" />
     <Content Include="Content\images\icons.svg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\menu.png" />
@@ -280,6 +281,8 @@
     <Content Include="Content\js\move-top.js" />
     <Content Include="Content\js\percircle.js" />
     <Content Include="Content\js\scripts.js" />
+    <Content Include="Content\scripts\DetalhesPagina.js" />
+    <Content Include="Content\scripts\MenuLateral.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -317,7 +320,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\scripts\" />
     <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
