@@ -16,5 +16,14 @@ namespace EasyHomeChef.DAO
                 context.SaveChanges();
             }
         }
+
+        public void Atualiza(Usuario usuario)
+        {
+            using (var context = new EasyHomeChefContext())
+            {
+                context.Update(usuario);
+                context.SaveChanges();
+            }
+        }
     }
 }

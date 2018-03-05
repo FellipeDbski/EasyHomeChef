@@ -5,3 +5,8 @@
 .fa.pull-left{
     padding-left: 25px;
 }
+
+.CorrecaoInputFoto {
+    font-size: 1em!important;
+    color: #777!important;
+}

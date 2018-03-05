@@ -2,6 +2,7 @@
     this.dd = el;
     this.initEvents();
 }
+
 DropDown.prototype = {
     initEvents: function () {
         var obj = this;
@@ -12,6 +13,7 @@ DropDown.prototype = {
         });
     }
 }
+
 $(function () {
 
     var dd = new DropDown($('#dd1'));

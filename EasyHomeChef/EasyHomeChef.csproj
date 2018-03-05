@@ -207,6 +207,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="DAO\EasyHomeChefContext.cs" />
+    <Compile Include="DAO\GeladeiraDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -218,6 +219,10 @@
     <Compile Include="Migrations\20180130135613_AltTabelaGI.cs" />
     <Compile Include="Migrations\20180130135613_AltTabelaGI.designer.cs">
       <DependentUpon>20180130135613_AltTabelaGI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180218184458_Email_Bio.cs" />
+    <Compile Include="Migrations\20180218184458_Email_Bio.designer.cs">
+      <DependentUpon>20180218184458_Email_Bio.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\EasyHomeChefContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -320,10 +325,10 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Usuarios\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <Content Include="Views\Usuarios\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />

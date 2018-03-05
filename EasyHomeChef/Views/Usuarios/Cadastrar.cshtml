@@ -1,0 +1,32 @@
+﻿<form method="get" action="~/Controllers/UsuariosController/CriarUsuario">
+    @Html.AntiForgeryToken()
+    <div class="styled-input">
+        <input type="text" required />
+        <label for="nome">Nome</label>
+        <span></span>
+    </div>
+    <div class="styled-input">
+        <input type="text" name="usuario.email" required />
+        <label>Email</label>
+        <span></span>
+    </div>
+
+    <div class="styled-input">
+        <textarea maxlength="150" value="Digite aqui algo sobre você" required></textarea>
+        <label>Descrição</label>
+        <span></span>
+    </div>
+
+    <div class="styled-input">
+        <input class="custom-file-input" type="file" name="usuario.Foto" accept=".png">
+        <label class="CorrecaoInputFoto">Foto de Perfil</label>
+        <span></span>
+    </div>
+
+    <div class="send">
+        <input type="submit" value="Cadastrar!">
+    </div>
+
+</form>
+
+

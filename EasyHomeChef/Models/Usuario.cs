@@ -11,6 +11,10 @@ namespace EasyHomeChef.Models
 
         public string Nome { get; set; }
 
+        public string Email { get; set; }
+
+        public string Biografia { get; set; }
+
         public Geladeira Geladeira { get; set; }
 
         public int GeladeiraID { get; set; }

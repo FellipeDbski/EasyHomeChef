@@ -152,6 +152,10 @@ namespace EasyHomeChef.Migrations
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Biografia");
+
+                    b.Property<string>("Email");
+
                     b.Property<int>("GeladeiraID");
 
                     b.Property<string>("Nome");
