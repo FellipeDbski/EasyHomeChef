@@ -12,12 +12,12 @@ namespace EasyHomeChef.Controllers
 {
     public class UsuariosController : Controller
     {
-
         public ActionResult Cadastrar()
         {
             return View();
         }
 
+        [HttpPost]
         public ActionResult CriarUsuario(Usuario usuario)
         {
             UsuarioDAO user = new UsuarioDAO();
@@ -32,6 +32,5 @@ namespace EasyHomeChef.Controllers
           
             return RedirectToAction("Index");
         }
-
     }
 }
