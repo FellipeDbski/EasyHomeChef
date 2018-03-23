@@ -210,7 +210,6 @@
     <Compile Include="DAO\GeladeiraDAO.cs" />
     <Compile Include="DAO\ImagemDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
-    <Compile Include="Funções\BancoDeDados\PersisteImagem.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -225,6 +224,10 @@
     <Compile Include="Migrations\20180218184458_Email_Bio.cs" />
     <Compile Include="Migrations\20180218184458_Email_Bio.designer.cs">
       <DependentUpon>20180218184458_Email_Bio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\20180323012332_usuario_imagem.cs" />
+    <Compile Include="Migrations\20180323012332_usuario_imagem.designer.cs">
+      <DependentUpon>20180323012332_usuario_imagem.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\EasyHomeChefContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -328,6 +331,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\Imagem\" />
+    <Folder Include="Funções\BancoDeDados\" />
     <Folder Include="Views\Imagem\" />
   </ItemGroup>
   <ItemGroup>

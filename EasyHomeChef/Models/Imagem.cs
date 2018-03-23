@@ -12,7 +12,5 @@ namespace EasyHomeChef.Models
         public string Title { get; set; }
 
         public string ImagePath { get; set; }
-
-        public HttpPostedFileBase ImageFile { get; set; }
     }
 }

@@ -158,6 +158,8 @@ namespace EasyHomeChef.Migrations
 
                     b.Property<int>("GeladeiraID");
 
+                    b.Property<string>("ImagePath");
+
                     b.Property<string>("Nome");
 
                     b.HasKey("ID");

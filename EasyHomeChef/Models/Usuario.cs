@@ -15,6 +15,8 @@ namespace EasyHomeChef.Models
 
         public string Biografia { get; set; }
 
+        public string ImagePath { get; set; }
+
         public Geladeira Geladeira { get; set; }
 
         public int GeladeiraID { get; set; }

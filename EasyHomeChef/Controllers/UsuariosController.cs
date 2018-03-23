@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -28,6 +29,13 @@ namespace EasyHomeChef.Controllers
 
             usuario.GeladeiraID = geladeira.ID;
 
+            var arquivo = this.Request.Files[0];
+
+            string arquivoSalvo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "files");
+            arquivoSalvo = Path.Combine(arquivoSalvo, Path.GetFileName(arquivo.FileName));
+            arquivo.SaveAs(arquivoSalvo);
+
+            usuario.ImagePath = arquivoSalvo;
             user.Atualiza(usuario);
           
             return RedirectToAction("Index");

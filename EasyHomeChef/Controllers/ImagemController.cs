@@ -17,19 +17,12 @@ namespace EasyHomeChef.Controllers
         }
 
         [HttpPost]
-        public ActionResult TratamentoImagem(Imagem modeloImagem)
+        public ActionResult Upload()
         {
-            //Define nomes, extensões e local de armazenamento dos arquivos.
-            string nomeArquivo = Path.GetFileNameWithoutExtension(modeloImagem.ImageFile.FileName);
-            string extension = Path.GetExtension(modeloImagem.ImageFile.FileName);
-            nomeArquivo = nomeArquivo += DateTime.Now.ToString("yymmssfff") + extension; 
-            modeloImagem.ImagePath = "~/App_Data/Imagem" + nomeArquivo;
-            nomeArquivo = Path.Combine(Server.MapPath("~/App_Data/Imagem"), nomeArquivo);
-            modeloImagem.ImageFile.SaveAs(nomeArquivo);
-
-            //Persiste no banco de dados com DAO "~/DAO/ImagemDAO"
-            ImagemDAO dao = new ImagemDAO();
-            dao.Adiciona(modeloImagem);
+            var file = this.Request.Files[0];
+            string savedFileName = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "files");
+            savedFileName = Path.Combine(savedFileName, Path.GetFileName(file.FileName));
+            file.SaveAs(savedFileName);
 
             return View();
         }
