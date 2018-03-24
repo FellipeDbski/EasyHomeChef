@@ -1,24 +1,24 @@
-﻿<form method="get" action="~/Controllers/UsuariosController/CriarUsuario">
-    @Html.AntiForgeryToken()
+﻿
+<form method="post" action="/usuarios/criarusuario">
     <div class="styled-input">
-        <input type="text" required />
+        <input type="text" name="usuario.Nome" required />
         <label for="nome">Nome</label>
         <span></span>
     </div>
     <div class="styled-input">
-        <input type="text" name="usuario.email" required />
+        <input type="text" name="usuario.Email" required />
         <label>Email</label>
         <span></span>
     </div>
 
     <div class="styled-input">
-        <textarea maxlength="150" value="Digite aqui algo sobre você" required></textarea>
+        <textarea maxlength="150" name="usuario.Biografia" required></textarea>
         <label>Descrição</label>
         <span></span>
     </div>
 
     <div class="styled-input">
-        <input for="photo" class="custom-file-input" type="file" name="usuario.Foto" accept=".png">
+        <input for="photo" class="custom-file-input" type="file" id="file" name="usuario.ImagePath" accept=".png">
         <label class="CorrecaoInputFoto">Foto de Perfil</label>
         <span></span>
     </div>

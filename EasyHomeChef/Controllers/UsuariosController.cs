@@ -21,24 +21,33 @@ namespace EasyHomeChef.Controllers
         [HttpPost]
         public ActionResult CriarUsuario(Usuario usuario)
         {
-            UsuarioDAO user = new UsuarioDAO();
-            user.Adiciona(usuario);
-
+            //cria uma geladeira e um dao
             GeladeiraDAO geladeiraDAO = new GeladeiraDAO();
             Geladeira geladeira = new Geladeira();
 
+            //persiste a geladeira no banco de dados
+            geladeiraDAO.Adiciona(geladeira);
+
+            //salva geladeira em usuario
             usuario.GeladeiraID = geladeira.ID;
 
-            var arquivo = this.Request.Files[0];
+            //cria usuário
+            UsuarioDAO user = new UsuarioDAO();
 
+            //salva usuario no banco com DAO
+            user.Adiciona(usuario);
+
+            //Salva a url da imagem em user_imagepath como uma string
+            var arquivo = this.Request.Files[0];
             string arquivoSalvo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "files");
             arquivoSalvo = Path.Combine(arquivoSalvo, Path.GetFileName(arquivo.FileName));
             arquivo.SaveAs(arquivoSalvo);
-
             usuario.ImagePath = arquivoSalvo;
+
+            //atuliaza o usuario com novas informações.
             user.Atualiza(usuario);
           
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
     }
 }

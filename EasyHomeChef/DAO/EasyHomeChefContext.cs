@@ -36,7 +36,7 @@ namespace EasyHomeChef.DAO
             base.OnConfiguring(optionsBuilder);
         }
 
-
+        
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<GeladeiraIngrediente>()
@@ -52,5 +52,6 @@ namespace EasyHomeChef.DAO
                 .HasKey(rt => new { rt.ReceitaID, rt.TemperoID });
             base.OnModelCreating(modelBuilder);
         }
+        
     }
 }
