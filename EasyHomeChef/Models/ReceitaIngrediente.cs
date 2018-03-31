@@ -9,11 +9,11 @@ namespace EasyHomeChef.Models
     {
         public Receita Receita { get; set; }
 
-        public int ReceitaID { get; set; }
+        public int? ReceitaID { get; set; }
 
         public Ingrediente Ingrediente { get; set; }
 
-        public int IngredienteID { get; set; }
+        public int? IngredienteID { get; set; }
 
         public string UnidadeMedida { get; set; }
     }

@@ -33,9 +33,9 @@ namespace EasyHomeChef.Migrations
 
             modelBuilder.Entity("EasyHomeChef.Models.GeladeiraIngrediente", b =>
                 {
-                    b.Property<int>("GeladeiraID");
+                    b.Property<int?>("GeladeiraID");
 
-                    b.Property<int>("IngredienteID");
+                    b.Property<int?>("IngredienteID");
 
                     b.Property<int>("Quantidade");
 
@@ -48,15 +48,33 @@ namespace EasyHomeChef.Migrations
 
             modelBuilder.Entity("EasyHomeChef.Models.GeladeiraTempero", b =>
                 {
-                    b.Property<int>("GeladeiraID");
+                    b.Property<int?>("GeladeiraID");
 
-                    b.Property<int>("TemperoID");
+                    b.Property<int?>("TemperoID");
 
                     b.HasKey("GeladeiraID", "TemperoID");
 
                     b.HasIndex("TemperoID");
 
                     b.ToTable("GeladeiraTempero");
+                });
+
+            modelBuilder.Entity("EasyHomeChef.Models.Imagem", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Descriao");
+
+                    b.Property<byte[]>("Foto");
+
+                    b.Property<string>("Nome");
+
+                    b.Property<long>("Tamanho");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Imagem");
                 });
 
             modelBuilder.Entity("EasyHomeChef.Models.Ingrediente", b =>
@@ -105,9 +123,9 @@ namespace EasyHomeChef.Migrations
 
             modelBuilder.Entity("EasyHomeChef.Models.ReceitaIngrediente", b =>
                 {
-                    b.Property<int>("ReceitaID");
+                    b.Property<int?>("ReceitaID");
 
-                    b.Property<int>("IngredienteID");
+                    b.Property<int?>("IngredienteID");
 
                     b.Property<string>("UnidadeMedida");
 
@@ -120,9 +138,9 @@ namespace EasyHomeChef.Migrations
 
             modelBuilder.Entity("EasyHomeChef.Models.ReceitaTempero", b =>
                 {
-                    b.Property<int>("ReceitaID");
+                    b.Property<int?>("ReceitaID");
 
-                    b.Property<int>("TemperoID");
+                    b.Property<int?>("TemperoID");
 
                     b.HasKey("ReceitaID", "TemperoID");
 
@@ -156,15 +174,17 @@ namespace EasyHomeChef.Migrations
 
                     b.Property<string>("Email");
 
-                    b.Property<int>("GeladeiraID");
+                    b.Property<int?>("GeladeiraID");
 
-                    b.Property<string>("ImagePath");
+                    b.Property<int?>("ImagemID");
 
                     b.Property<string>("Nome");
 
                     b.HasKey("ID");
 
                     b.HasIndex("GeladeiraID");
+
+                    b.HasIndex("ImagemID");
 
                     b.ToTable("Usuario");
                 });
@@ -243,8 +263,11 @@ namespace EasyHomeChef.Migrations
                 {
                     b.HasOne("EasyHomeChef.Models.Geladeira", "Geladeira")
                         .WithMany()
-                        .HasForeignKey("GeladeiraID")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("GeladeiraID");
+
+                    b.HasOne("EasyHomeChef.Models.Imagem", "Imagem")
+                        .WithMany()
+                        .HasForeignKey("ImagemID");
                 });
 #pragma warning restore 612, 618
         }

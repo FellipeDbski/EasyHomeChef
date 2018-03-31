@@ -29,6 +29,8 @@ namespace EasyHomeChef.DAO
 
         public DbSet<Usuario> Usuario { get; set; }
 
+        public DbSet<Imagem> Imagem { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string stringConexao = ConfigurationManager.ConnectionStrings["EasyHomeChef"].ConnectionString;

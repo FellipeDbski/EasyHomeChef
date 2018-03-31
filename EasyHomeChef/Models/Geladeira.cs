@@ -12,6 +12,5 @@ namespace EasyHomeChef.Models
         public IList<Ingrediente> Ingrediente { get; set; }
 
         public IList<Tempero> Tempero { get; set; }
-
     }
 }

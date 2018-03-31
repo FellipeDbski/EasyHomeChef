@@ -19,35 +19,38 @@ namespace EasyHomeChef.Controllers
         }
 
         [HttpPost]
-        public ActionResult CriarUsuario(Usuario usuario)
+        public ActionResult CriarUsuario(Usuario usuario, HttpPostedFileBase arquivo)
         {
-            //cria uma geladeira e um dao
-            GeladeiraDAO geladeiraDAO = new GeladeiraDAO();
-            Geladeira geladeira = new Geladeira();
-
-            //persiste a geladeira no banco de dados
-            geladeiraDAO.Adiciona(geladeira);
-
-            //salva geladeira em usuario
-            usuario.GeladeiraID = geladeira.ID;
-
-            //cria usuário
+            //DAO 
             UsuarioDAO user = new UsuarioDAO();
+            GeladeiraDAO geladeiraDAO = new GeladeiraDAO();
+            ImagemDAO imagemDao = new ImagemDAO();
 
-            //salva usuario no banco com DAO
+            Geladeira geladeira = new Geladeira();
+            geladeiraDAO.Adiciona(geladeira);
+            usuario.GeladeiraID = geladeira.ID;
+           
+
+            //Busca o arquivo do file.upload com o razor e trás para o servidor.
+            var post = Request.Files[0];
+            var obj = new Imagem();
+            var file = new FileInfo(post.FileName);
+
+            obj.Nome = file.Name;
+            obj.Descriao = file.Extension;
+
+            //Faz a conversão da imagem para byte e persiste no banco de dados
+            using (var reader = new BinaryReader(post.InputStream))
+                obj.Foto = reader.ReadBytes(post.ContentLength);
+
+            imagemDao.Adiciona(obj);
+            usuario.ImagemID = obj.ID;
+
             user.Adiciona(usuario);
 
-            //Salva a url da imagem em user_imagepath como uma string
-            var arquivo = this.Request.Files[0];
-            string arquivoSalvo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "files");
-            arquivoSalvo = Path.Combine(arquivoSalvo, Path.GetFileName(arquivo.FileName));
-            arquivo.SaveAs(arquivoSalvo);
-            usuario.ImagePath = arquivoSalvo;
-
-            //atuliaza o usuario com novas informações.
-            user.Atualiza(usuario);
-          
             return RedirectToAction("Index", "Home");
         }
+
+
     }
 }

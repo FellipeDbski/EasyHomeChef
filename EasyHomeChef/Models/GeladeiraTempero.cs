@@ -9,10 +9,10 @@ namespace EasyHomeChef.Models
     {
         public Geladeira Geladeira { get; set; }
 
-        public int GeladeiraID { get; set; }
+        public int? GeladeiraID { get; set; }
 
         public Tempero Tempero { get; set; }
 
-        public int TemperoID { get; set; }
+        public int? TemperoID { get; set; }
     }
 }

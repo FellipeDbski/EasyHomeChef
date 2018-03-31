@@ -146,6 +146,8 @@
     <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.4.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -213,21 +215,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\20180130011251_initial.cs" />
-    <Compile Include="Migrations\20180130011251_initial.designer.cs">
-      <DependentUpon>20180130011251_initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20180130135613_AltTabelaGI.cs" />
-    <Compile Include="Migrations\20180130135613_AltTabelaGI.designer.cs">
-      <DependentUpon>20180130135613_AltTabelaGI.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20180218184458_Email_Bio.cs" />
-    <Compile Include="Migrations\20180218184458_Email_Bio.designer.cs">
-      <DependentUpon>20180218184458_Email_Bio.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\20180323012332_usuario_imagem.cs" />
-    <Compile Include="Migrations\20180323012332_usuario_imagem.designer.cs">
-      <DependentUpon>20180323012332_usuario_imagem.cs</DependentUpon>
+    <Compile Include="Migrations\20180331040001_initial.cs" />
+    <Compile Include="Migrations\20180331040001_initial.designer.cs">
+      <DependentUpon>20180331040001_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\EasyHomeChefContextModelSnapshot.cs" />
     <Compile Include="Models\Categoria.cs" />
@@ -295,6 +285,7 @@
     <Content Include="Content\js\scripts.js" />
     <Content Include="Content\scripts\DetalhesPagina.js" />
     <Content Include="Content\scripts\MenuLateral.js" />
+    <Content Include="Content\scripts\TratamentoImagem.js" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="ApplicationInsights.config">
@@ -331,7 +322,7 @@
     <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\Imagem\" />
+    <Folder Include="App_Data\Uploads\" />
     <Folder Include="Funções\BancoDeDados\" />
     <Folder Include="Views\Imagem\" />
   </ItemGroup>
@@ -341,6 +332,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

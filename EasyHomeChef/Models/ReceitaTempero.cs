@@ -9,10 +9,10 @@ namespace EasyHomeChef.Models
     {
         public Receita Receita { get; set; }
 
-        public int ReceitaID { get; set; }
+        public int? ReceitaID { get; set; }
         
         public Tempero Tempero { get; set; }
 
-        public int TemperoID { get; set; }
+        public int? TemperoID { get; set; }
     }
 }
