@@ -3,7 +3,7 @@ Esta aplicação web tem como objetivo ser um livro de receitas inteligente,
 
 
 
-Notas de atualização dia 23/03/208
+Notas de atualização dia 23/03/2018
 
 Desenvolvi toda a lógica de persistência dos dados no servidor, está quase 100% funcional,
 só estou com dificuldades em trabalhar com as imagens no servidor,
